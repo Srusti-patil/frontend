@@ -1,16 +1,15 @@
 import React from "react";
-import { render  } from '@testing-library/react';
+import { render ,screen} from '@testing-library/react';
 import Home from "./Home";
 
-test ('renders all buttons',()=>{
-    const {getByText} = render(<Home />)
-
-    const addbtn = getByText('add user',{exact:false});
-
-    expect(addbtn).toBeInTheDocument();
-
-}
-
-);
-
-/home/srustipn/demo/crud/frontend
+//describe('Home component', () => {
+    test('renders sidebar options correctly', () => {
+      const { getByText } = render(<Home />);
+      
+      expect(screen.getByText('Add user')).toBeInTheDocument();
+      expect(screen.getByText('Update user')).toBeInTheDocument();
+      expect(screen.getByText('View all users')).toBeInTheDocument();
+      expect(screen.getByText('View user by id')).toBeInTheDocument();
+      expect(screen.getByText('Delete user')).toBeInTheDocument();
+    });
+ // });
