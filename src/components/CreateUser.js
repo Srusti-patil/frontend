@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import UserService from "../services/userService";
+import UserService from "../services/userService.js";
 
 const CreateUser = () => {
   const [firstName, setFirstName] = useState('');
@@ -76,6 +76,7 @@ const CreateUser = () => {
 };
 
   return (
+    
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
@@ -84,6 +85,7 @@ const CreateUser = () => {
             <div className="mb-3">
               <label htmlFor="firstname" className="form-label">First Name</label>
               <input
+                id="firstname"
                 type="text"
                 className="form-control"
                 placeholder="Enter your first name"
@@ -94,7 +96,9 @@ const CreateUser = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="lastname" className="form-label">Last Name</label>
-              <input
+              <input 
+
+                id="lastname"
                 type="text"
                 className="form-control"
                 placeholder="Enter your last name"
@@ -106,6 +110,7 @@ const CreateUser = () => {
             <div className="mb-3">
               <label htmlFor="Email" className="form-label">E-mail</label>
               <input
+                id="Email"
                 type="email"
                 className="form-control"
                 placeholder="Enter your e-mail address"
@@ -127,6 +132,7 @@ const CreateUser = () => {
         </div>
       </div>
     </div>
+   
   );
 }
 

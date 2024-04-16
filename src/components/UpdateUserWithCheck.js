@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import CheckUserId from './CheckUserId';
-import UpdateUser from './UpdateUser';
+import CheckUserId from './CheckUserId.js';
+import UpdateUser from './UpdateUser.js';
 
 const UpdateUserWithCheck = () => {
   const [userId, setUserId] = useState(null);

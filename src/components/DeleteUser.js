@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import UserService from "../services/userService";
+import UserService from "../services/userService.js";
 
 export default function DeleteUser() {
     const [userIdInput, setUserIdInput] = useState('');
@@ -42,6 +42,7 @@ export default function DeleteUser() {
               <div className="mb-3">
                 <label htmlFor="userIdInput" className="form-label">Enter User ID</label>
                 <input
+                  id="userIdInput"
                   type="text"
                   className="form-control"
                   placeholder="Enter your User ID"

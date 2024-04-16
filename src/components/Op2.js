@@ -4,7 +4,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserService from "../services/userService";
+import UserService from "../services/userService.js";
 
 const SimpleForm = () => {
   const [firstName, setFirstName] = useState('');

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Link} from 'react-router-dom'
-import UserService from "../services/userService";
+import UserService from "../services/userService.js";
 
 const ListUserComponent = ()=>{
     const [users, setUsers] = useState([]);
