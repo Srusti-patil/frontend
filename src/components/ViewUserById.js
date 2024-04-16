@@ -46,25 +46,24 @@ const ViewUserById = () => {
                         
                         <div className="table-responsive" style={{ marginTop: '40px' }}>
                             <table className="table table-bordered table-striped wide-table">
-                            <thead>
-                                <tr>
-                                    <th className="text-center">Id</th>
-                                    <th className="text-center">First Name</th>
-                                    <th className="text-center">Last Name</th>
-                                    <th className="text-center">Email Id</th>
-                                    {/* <th className="text-center"> Actions </th> */}
-                                </tr>
-                            </thead>
                             <tbody>
-                                {/* {users.map(user => ( */}
-                                    <tr key={user.id}>
+                                    <tr>
+                                        <th className="text-center">ID</th>
                                         <td className="text-center">{user.id}</td>
+                                    </tr>
+                                    <tr>
+                                        <th className="text-center">First Name</th>
                                         <td className="text-center">{user.firstName}</td>
+                                    </tr>
+                                    <tr>
+                                        <th className="text-center">Last Name</th>
                                         <td className="text-center">{user.lastName}</td>
+                                    </tr>
+                                    <tr>
+                                        <th className="text-center">Email</th>
                                         <td className="text-center">{user.emailId}</td>
                                     </tr>
-                                {/* ))} */}
-                            </tbody>
+                                </tbody>
                             </table>
                         </div>
                     )}
