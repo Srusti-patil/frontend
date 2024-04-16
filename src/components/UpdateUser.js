@@ -13,6 +13,12 @@ const UpdateUser = () => {
   const updateUser = () => {
     // e.preventDefault(); // Prevent the default form submission behavior
     const user = { firstName, lastName, emailId };
+
+    if (!firstName || !lastName || !emailId) {
+      alert('Please fill in all the fields.');
+      return; // Stop execution if validation fails
+    }
+    
     UserService.updateUser(userIdInput, user)
       .then(() => {
         console.log("User updated successfully");
