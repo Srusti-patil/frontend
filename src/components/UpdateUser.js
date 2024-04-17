@@ -9,7 +9,7 @@ const UpdateUser = () => {
   const [userIdInput, setUserIdInput] = useState('');
   const navigate = useNavigate();
   const { userId } = useParams();
-
+  
   const updateUser = () => {
     // e.preventDefault(); // Prevent the default form submission behavior
     const user = { firstName, lastName, emailId };
@@ -18,14 +18,22 @@ const UpdateUser = () => {
       alert('Please fill in all the fields.');
       return; // Stop execution if validation fails
     }
-    
+
     UserService.updateUser(userIdInput, user)
       .then(() => {
         console.log("User updated successfully");
         alert("User updated successfully");
         navigate('/');
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        if(error.response.status==409){
+          alert('This email ID already exists. Try again!');
+        }
+        else{
+          alert('Error ' + error.response.status + " occured. Try again!");
+        }
+        console.log(error);
+      });
   };
 
   const checkUserId = (e) => {
